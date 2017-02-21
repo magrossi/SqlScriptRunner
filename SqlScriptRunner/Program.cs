@@ -169,6 +169,7 @@ namespace SqlScriptRunner
             if (!String.IsNullOrWhiteSpace(script))
             {
                 SqlCommand sqlCommand = new SqlCommand(script, sqlConnection);
+                sqlCommand.CommandTimeout = 0;
                 return sqlCommand.ExecuteNonQuery();
             }
             return 0;
